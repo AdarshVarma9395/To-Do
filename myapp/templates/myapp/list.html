@@ -47,10 +47,26 @@ integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw
 		border-color: #e59400;
 	}
 
+	.button-wrapper {
+		display: inline-block;
+		margin: 10px; /* Adjust margin as needed */
+	  }
+	  
+	  .logout-button {
+		display: inline-block;
+		padding: 10px 20px; /* Adjust padding as needed */
+		background-color: #bf2424; /* Button background color */
+		color: #fff; /* Button text color */
+		text-decoration: none;
+		border-radius: 5px; /* Adjust border radius as needed */
+	  }
+	  
+	  .logout-button:hover {
+		background-color: #0056b3; /* Button background color on hover */
+	  }
+	  
 </style>
-
 <div class="center-column">
-
 	<form method="POST" action="/">
 		{% csrf_token %}
 		{{form.title}}
@@ -74,4 +90,8 @@ integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw
 		    </div>
 	    {% endfor %}
 	</div>
+	<div>
+		<span class="button-wrapper"><a href="{% url 'logout' %}" class="logout-button">Logout here</a></span>
+	</div>
 </div>
+
